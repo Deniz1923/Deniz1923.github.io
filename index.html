@@ -1,0 +1,73 @@
+---
+layout: default
+title: "Home"
+---
+
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <p class="eyebrow">Hey, I'm</p>
+    <h1>Deniz</h1>
+    <p class="subtitle">Yaşıyorum</p>
+    <p class="summary">
+      Websitesi yaptım gibi.
+    </p>
+    <div class="hero-buttons">
+      <a href="#projects" class="btn secondary">View my projects</a>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="block">
+  <h2>Projects</h2>
+  <p class="section-subtitle">Some things I’ve built or am currently working on.</p>
+
+  <div class="cards">
+    {% for project in site.data.projects %}
+      <article class="card">
+        <h3>
+          {% if project.link %}
+          <a href="{{ project.link }}" target="_blank" rel="noopener">{{ project.name }}</a>
+          {% else %}
+          {{ project.name }}
+          {% endif %}
+        </h3>
+        <p>{{ project.description }}</p>
+        {% if project.tags %}
+        <p class="tags">
+          {% for tag in project.tags %}
+            <span class="tag">{{ tag }}</span>
+          {% endfor %}
+        </p>
+        {% endif %}
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="about" class="block">
+  <h2>About me</h2>
+  <p>
+    I’m a developer who enjoys learning new technologies, building side projects,
+    and documenting the journey. This site is my little corner of the internet
+    to share progress, ideas, and experiments.
+  </p>
+</section>
+
+<section id="contact" class="block">
+  <h2>Let’s connect</h2>
+  <p>You can find me on these platforms:</p>
+
+  <div class="contact-actions">
+    {% if site.social.github %}
+    <a href="{{ site.social.github }}" class="btn social-btn" target="_blank" rel="noopener">
+      View my GitHub
+    </a>
+    {% endif %}
+
+    {% if site.social.linkedin %}
+    <a href="{{ site.social.linkedin }}" class="btn social-btn" target="_blank" rel="noopener">
+      Connect on LinkedIn
+    </a>
+    {% endif %}
+  </div>
+</section>

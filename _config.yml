@@ -1,0 +1,12 @@
+title: "Deniz’s Website"
+author: "Deniz"
+description: "My personal dev vlog, projects, and links."
+url: "https://deniz1923.github.io"   
+baseurl: ""                          
+
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+
+social:
+  github: "https://github.com/Deniz1923"
+  linkedin: "https://www.linkedin.com/in/%C3%B6zg%C3%BCrdenizgen%C3%A7"
