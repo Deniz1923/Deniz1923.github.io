@@ -326,3 +326,65 @@ body {
   flex: 1 1 auto;
   text-align: center;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Main content wrapper */
+.site-main {
+  padding-top: 1.5rem;
+  padding-bottom: 2.5rem;
+}
+
+/* About section layout */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.about-meta {
+  border-radius: 1rem;
+  background: radial-gradient(circle at top, rgba(30, 64, 175, 0.25), transparent 55%),
+    rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  padding: 1rem 1.1rem;
+}
+
+.meta-title {
+  margin: 0.8rem 0 0.2rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+}
+
+/* Skill / pill lists */
+
+.pill-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.4rem 0 0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.pill {
+  font-size: 0.78rem;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  border: 1px solid rgba(129, 140, 248, 0.7);
+}
+
+/* About layout on small screens */
+
+@media (max-width: 640px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}

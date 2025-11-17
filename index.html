@@ -13,13 +13,14 @@ title: "Home"
     </p>
     <div class="hero-buttons">
       <a href="#projects" class="btn secondary">View my projects</a>
+      <a href="#about" class="btn secondary">About Section</a>
     </div>
   </div>
 </section>
 
 <section id="projects" class="block">
   <h2>Projects</h2>
-  <p class="section-subtitle">Some things I’ve built or am currently working on.</p>
+  <p class="section-subtitle">A mix of finished things and work-in-progress experiments.</p>
 
   <div class="cards">
     {% for project in site.data.projects %}
@@ -31,11 +32,21 @@ title: "Home"
           {{ project.name }}
           {% endif %}
         </h3>
+
+        {% if project.period or project.status %}
+        <p class="meta">
+          {% if project.period %}{{ project.period }}{% endif %}
+          {% if project.period and project.status %} · {% endif %}
+          {% if project.status %}{{ project.status }}{% endif %}
+        </p>
+        {% endif %}
+
         <p>{{ project.description }}</p>
+
         {% if project.tags %}
         <p class="tags">
           {% for tag in project.tags %}
-            <span class="tag">{{ tag }}</span>
+          <span class="tag">{{ tag }}</span>
           {% endfor %}
         </p>
         {% endif %}
@@ -46,11 +57,38 @@ title: "Home"
 
 <section id="about" class="block">
   <h2>About me</h2>
-  <p>
-    I’m a developer who enjoys learning new technologies, building side projects,
-    and documenting the journey. This site is my little corner of the internet
-    to share progress, ideas, and experiments.
-  </p>
+
+  <div class="about-grid">
+    <div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+    </div>
+
+    <aside class="about-meta">
+      <h3 class="meta-title">What I use</h3>
+      <ul class="pill-list">
+        <li class="pill">HTML &amp; CSS</li>
+        <li class="pill">JavaScript / TypeScript</li>
+        <li class="pill">Jekyll &amp; static sites</li>
+        <li class="pill">Git &amp; GitHub</li>
+      </ul>
+
+      <h3 class="meta-title">Currently learning</h3>
+      <ul class="pill-list">
+        <li class="pill">React</li>
+        <li class="pill">Node.js</li>
+        <li class="pill">UI design basics</li>
+      </ul>
+      
+    </aside>
+  </div>
 </section>
 
 <section id="contact" class="block">

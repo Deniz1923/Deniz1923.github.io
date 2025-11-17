@@ -1,14 +1,16 @@
 - name: "Portfolio Website"
   description: "This site – built with Jekyll and hosted on GitHub Pages."
   link: "https://deniz1923.github.io"
-  tags: ["Jekyll", "GitHub Pages"]
+  tags:
+    - HTML
+    - CSS
+    - Jekyll
 
 - name: "CENG211 HW2"
   description: "A Java program that processes CSV files to evaluate scholarship applications."
   link: "https://github.com/Deniz1923/G14_CENG211_HW2"
-  tags: ["Java", "CSV"]
+  tags:
+    - Java
+    - CSV
+    - File Processing
 
-- name: "Another Project"
-  description: "Replace with any other project you want to highlight."
-  link: "https://github.com/Deniz1923/another-repo"
-  tags: ["JavaScript", "Frontend"]
