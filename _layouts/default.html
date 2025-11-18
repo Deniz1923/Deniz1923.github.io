@@ -10,12 +10,16 @@
 </head>
 
 <body>
+  <!-- Animated particles background -->
+  <div class="particles" id="particles"></div>
+
   <header class="site-header">
     <div class="container nav">
       <a href="{{ '/' | relative_url }}" class="logo">{{ site.title }}</a>
       <nav class="nav-links">
         <a href="{{ '/' | relative_url }}#home">Home</a>
         <a href="{{ '/' | relative_url }}#projects">Projects</a>
+        <a href="{{ '/' | relative_url }}#skills">Skills</a>
         <a href="{{ '/' | relative_url }}#about">About</a>
         <a href="{{ '/' | relative_url }}#contact">Contact</a>
       </nav>
@@ -39,6 +43,66 @@
       </div>
     </div>
   </footer>
+
+  <!-- Scroll to top button -->
+  <div class="scroll-indicator" id="scrollTop">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </div>
+
+  <script>
+    // Create animated particles
+    const particlesContainer = document.getElementById('particles');
+    for (let i = 0; i < 15; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      particle.style.width = Math.random() * 100 + 50 + 'px';
+      particle.style.height = particle.style.width;
+      particle.style.left = Math.random() * 100 + '%';
+      particle.style.top = Math.random() * 100 + '%';
+      particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
+      particle.style.animationDelay = Math.random() * 5 + 's';
+      particlesContainer.appendChild(particle);
+    }
+
+    // Scroll to top functionality
+    const scrollTop = document.getElementById('scrollTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollTop.classList.add('visible');
+      } else {
+        scrollTop.classList.remove('visible');
+      }
+    });
+
+    scrollTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Add fade-in animation on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.block, .stat-card, .card').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+      observer.observe(el);
+    });
+  </script>
 </body>
 
 </html>

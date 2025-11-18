@@ -1,16 +1,37 @@
 - name: "Portfolio Website"
-  description: "This site – built with Jekyll and hosted on GitHub Pages."
+  description: "A modern, responsive portfolio built with Jekyll and hosted on GitHub Pages. Features dark theme, smooth animations, and optimized performance."
   link: "https://deniz1923.github.io"
+  status: "Live"
   tags:
     - HTML
     - CSS
     - Jekyll
+    - GitHub Pages
 
-- name: "CENG211 HW2"
-  description: "A Java program that processes CSV files to evaluate scholarship applications."
+- name: "Scholarship Management System"
+  description: "A Java application that processes CSV files to evaluate and manage scholarship applications with efficient algorithms and data handling."
   link: "https://github.com/Deniz1923/G14_CENG211_HW2"
+  period: "2024"
   tags:
     - Java
-    - CSV
-    - File Processing
+    - CSV Processing
+    - Algorithms
+    - Data Structures
 
+- name: "Weather Dashboard"
+  description: "A responsive weather application built with JavaScript that fetches real-time data from weather APIs and displays forecasts with beautiful UI."
+  status: "In Progress"
+  tags:
+    - JavaScript
+    - API Integration
+    - Responsive Design
+    - HTML/CSS
+
+- name: "Task Manager App"
+  description: "A productivity tool for managing tasks and projects with features like deadlines, priorities, and progress tracking."
+  status: "In Progress"
+  tags:
+    - React
+    - Local Storage
+    - UI/UX
+    - JavaScript

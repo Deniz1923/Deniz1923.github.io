@@ -7,20 +7,36 @@ title: "Home"
   <div class="hero-inner">
     <p class="eyebrow">Hey, I'm</p>
     <h1>Deniz</h1>
-    <p class="subtitle">Yaşıyorum</p>
+    <p class="subtitle">Computer Engineering Student & Developer</p>
     <p class="summary">
-      Websitesi yaptım gibi.
+      I'm passionate about building elegant solutions to complex problems. Currently studying Computer Engineering and exploring the world of web development, algorithms, and software design.
     </p>
     <div class="hero-buttons">
-      <a href="#projects" class="btn secondary">View my projects</a>
-      <a href="#about" class="btn secondary">About Section</a>
+      <a href="#projects" class="btn primary">View My Work</a>
+      <a href="#contact" class="btn secondary">Get in Touch</a>
     </div>
   </div>
 </section>
 
+<!-- Stats Section -->
+<div class="stats">
+  <div class="stat-card">
+    <div class="stat-number">5+</div>
+    <div class="stat-label">Projects</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">3+</div>
+    <div class="stat-label">Technologies</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">100+</div>
+    <div class="stat-label">Commits</div>
+  </div>
+</div>
+
 <section id="projects" class="block">
-  <h2>Projects</h2>
-  <p class="section-subtitle">A mix of finished things and work-in-progress experiments.</p>
+  <h2>Featured Projects</h2>
+  <p class="section-subtitle">A collection of projects I've worked on recently</p>
 
   <div class="cards">
     {% for project in site.data.projects %}
@@ -44,56 +60,127 @@ title: "Home"
         <p>{{ project.description }}</p>
 
         {% if project.tags %}
-        <p class="tags">
+        <div class="tags">
           {% for tag in project.tags %}
           <span class="tag">{{ tag }}</span>
           {% endfor %}
-        </p>
+        </div>
         {% endif %}
       </article>
     {% endfor %}
   </div>
 </section>
 
+<section id="skills" class="block">
+  <h2>Skills & Technologies</h2>
+  <p class="section-subtitle">Tools and technologies I work with</p>
+
+  <div class="skills-grid">
+    <div class="skill-category">
+      <h4>Frontend Development</h4>
+      <ul class="skill-list">
+        <li class="skill-item">
+          <span>HTML & CSS</span>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 90%"></div>
+          </div>
+        </li>
+        <li class="skill-item">
+          <span>JavaScript</span>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 75%"></div>
+          </div>
+        </li>
+        <li class="skill-item">
+          <span>React</span>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 60%"></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="skill-category">
+      <h4>Backend & Tools</h4>
+      <ul class="skill-list">
+        <li class="skill-item">
+          <span>Java</span>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 80%"></div>
+          </div>
+        </li>
+        <li class="skill-item">
+          <span>Git & GitHub</span>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 85%"></div>
+          </div>
+        </li>
+        <li class="skill-item">
+          <span>Node.js</span>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 55%"></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <section id="about" class="block">
-  <h2>About me</h2>
+  <h2>About Me</h2>
+  <p class="section-subtitle">My journey in tech</p>
 
   <div class="about-grid">
     <div>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      <p style="margin-bottom: 1.5rem;">
+        I'm a Computer Engineering student with a passion for creating efficient and elegant solutions. My journey in programming started with curiosity and has evolved into a dedication to building meaningful projects.
       </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      </p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <h4>Computer Engineering Student</h4>
+          <div class="timeline-date">2023 - Present</div>
+          <p>Currently pursuing my degree in Computer Engineering, focusing on algorithms, data structures, and software development.</p>
+        </div>
+
+        <div class="timeline-item">
+          <h4>Web Development Journey</h4>
+          <div class="timeline-date">2024</div>
+          <p>Started learning modern web technologies including React, Jekyll, and responsive design principles.</p>
+        </div>
+
+        <div class="timeline-item">
+          <h4>First Projects</h4>
+          <div class="timeline-date">2024</div>
+          <p>Built my first portfolio website and various Java applications for coursework and personal learning.</p>
+        </div>
+      </div>
     </div>
 
     <aside class="about-meta">
-      <h3 class="meta-title">What I usee</h3>
+      <h3 class="meta-title">What I Use</h3>
       <ul class="pill-list">
         <li class="pill">HTML &amp; CSS</li>
         <li class="pill">JavaScript / TypeScript</li>
         <li class="pill">Jekyll &amp; static sites</li>
         <li class="pill">Git &amp; GitHub</li>
+        <li class="pill">Java</li>
       </ul>
 
-      <h3 class="meta-title">Currently learning</h3>
+      <h3 class="meta-title">Currently Learning</h3>
       <ul class="pill-list">
         <li class="pill">React</li>
         <li class="pill">Node.js</li>
-        <li class="pill">UI design basics</li>
+        <li class="pill">UI Design</li>
+        <li class="pill">Algorithms</li>
       </ul>
-      
     </aside>
   </div>
 </section>
 
 <section id="contact" class="block">
-  <h2>Let’s connect</h2>
-  <p>You can find me on these platformss:</p>
+  <h2>Let's Connect</h2>
+  <p class="section-subtitle">Feel free to reach out for collaborations or just a friendly chat</p>
 
   <div class="contact-actions">
     {% if site.social.github %}
